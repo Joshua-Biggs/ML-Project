@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Cancer Prediction</title>
+  </head>
+
+<body>
+ <div class="login">
+	<h1>Breast Cancer Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict_expenses')}}"method="post">
+    	<input type="text" name="radius_mean" placeholder="radius_mean" required="required" />
+        <input type="text" name="texture_mean" placeholder="texture_mean" required="required" />
+	<input type="text" name="perimeter_mean" placeholder="perimeter_mean" required="required" />
+	<input type="text" name="area_mean" placeholder="area_mean" required="required" />
+	<input type="text" name="smoothness_mean" placeholder="smoothness_mean" required="required" />
+	
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict Class Label</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
